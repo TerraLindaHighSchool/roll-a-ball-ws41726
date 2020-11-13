@@ -5,18 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private RigidBody rb;
+    private Rigidbody rb;
     private float movementX;
-    Private float movementY;
+    private float movementY;
     
     // Start is called before the first frame update
     void Start()
     {
-        rb = getComponent<Rigidbody>();
+        rb =
+            GetComponent<Rigidbody>();
     }
 
     
-    Void OnMove(InputValue movementValue)
+    void OnMove(InputValue movementValue)
     {
 	Vector2 movementVector = movementValue.Get<Vector2>();
 
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);   
  
-	rb.AddForce(movememt);
+	rb.AddForce(movement);
     }
 
 }
